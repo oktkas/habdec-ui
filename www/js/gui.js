@@ -600,8 +600,8 @@ function habdec_init(habdec_div, habdec_srv_url)
 
 	if(habdec_srv_url)
 		document.getElementById("HabDec_server_address").value = habdec_srv_url;
-
-	document.getElementById("HabDec_server_address").value = localStorage.getItem('habdec_server_address');
+	
+	//document.getElementById("HabDec_server_address").value = localStorage.getItem('habdec_server_address');
 	if(document.getElementById("HabDec_server_address").value == "")
 		document.getElementById("HabDec_server_address").value = "localhost:5555"
 	ResizeCanvas("HabDec_powerSpectrumCanvas");

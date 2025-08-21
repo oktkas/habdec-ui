@@ -43,9 +43,10 @@ function OpenConnection()
 		G_HD_WEBSOCKET.close();
 
 	var server = document.getElementById("HabDec_server_address").value;
-	if( server.toLowerCase().startsWith('ws://') )
-		server = server.substr(5, server.length);
-	server = 'ws://' + server;
+	if (!server.toLowerCase().startsWith('ws://') && !server.toLowerCase().startsWith('wss://')) {
+    	// If no protocol specified, default to ws://
+    	server = 'ws://' + server;
+	}
 	console.debug("Connecting to ", server, " ...");
 
 	G_HD_WEBSOCKET = new WebSocket(server);
